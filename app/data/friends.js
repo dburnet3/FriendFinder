@@ -1,6 +1,6 @@
-module.exports = [{
-    "name":"Ahmed",
-    "photo":"https://www.pexels.com/search/woman/",
+var friends = [{
+    "name":"Roary",
+    "photo":"https://www.pexels.com/search/woman.jpg",
     "scores":[
         5,
         1,
@@ -12,5 +12,36 @@ module.exports = [{
         5,
         4,
         1]
+},
+{
+    "name":"Sarah",
+    "photo":"https://www.pexels.com/photo/women-s-white-and-black-button-up-collared-shirt-774909.jpg",
+    "scores":[
+        3,
+        1,
+        2,
+        4,
+        3,
+        1,
+        5,
+        4,
+        4,
+        4]
+},
+{
+    "name":"Matt",
+    "photo":"https://www.pexels.com/photo/man-in-white-dress-shirt-holding-suit-jacket-1043474.jpg",
+    "scores":[
+        1,
+        3,
+        2,
+        2,
+        3,
+        4,
+        5,
+        2,
+        2,
+        3]
 }]
 
+module.exports = friends;

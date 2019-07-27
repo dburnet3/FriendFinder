@@ -1,9 +1,9 @@
-var friendInfo = require('../data/friends.js');
+var friends = require('../data/friends.js');
 
 // A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 module.exports = function(app){
     app.get('/api/friends', function(req, res){
-        res.json(friendInfo);
+        res.json(friends);
     });
 
     //Determine the user's most compatible friend
@@ -11,8 +11,8 @@ module.exports = function(app){
         var activeUser = req.body;
         var differences = [];
 
-        if (friendInfo.length > 1) {
-            friendInfo.forEach(function(user) {
+        if (friends.length > 1) {
+            friends.forEach(function(user) {
                 var totalDifference = 0;
 
                 for (var i = 0; i < activeUser.answers.length; i++) {
@@ -31,16 +31,16 @@ module.exports = function(app){
 
             for (var i = 0; i < differences.length; i++) {
                 if (differences[i] === minimumDifference) {
-                    bestMatches.push(friendInfo[i]);
+                    bestMatches.push(friends[i]);
                 }
             }
 
             res.json(bestMatches);
         } else {
-            res.json(friendInfo);
+            res.json(friends);
         }
 
-        friendInfo.push(activeUser);
+        friends.push(activeUser);
 
     });
 }
