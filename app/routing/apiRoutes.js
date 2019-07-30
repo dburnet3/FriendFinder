@@ -8,14 +8,16 @@ module.exports = function(app){
 
     //Determine the user's most compatible friend
     app.post('/api/friends', function(req, res) {
+        console.log(req.body.scores);
+
         var activeUser = req.body;
         var differences = [];
 
-        if (friends.length > 1) {
-            friends.forEach(function(user) {
+        if (activeUser.length > 1) {
+            activeUser.forEach(function(user) {
                 var totalDifference = 0;
 
-                for (var i = 0; i < activeUser.answers.length; i++) {
+                for (var i = 0; i < activeUser.length; i++) {
                     var otherAnswer = user.answers[i];
                     var thisAnswer = activeUser.answers[i];
                     var difference = +otherAnswer - +thisAnswer;

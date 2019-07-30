@@ -1,6 +1,6 @@
 var friends = [{
     "name":"Roary",
-    "photo":"https://www.pexels.com/search/woman.jpg",
+    "photo":"/Users/deniseburnett/projects/FriendFinder/app/public/images/roary.jpeg",
     "scores":[
         5,
         1,
